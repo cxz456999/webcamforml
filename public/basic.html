@@ -2,7 +2,7 @@
 <head>
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<title>WebcamJS Test Page</title>
+	<title>ML API Test</title>
 	<style type="text/css">
 		body { font-family: Helvetica, sans-serif; }
 		h2, h3 { margin-top:0; }
@@ -12,10 +12,9 @@
 	</style>
 </head>
 <body>
-	<div id="results">Your captured image will appear here...</div>
+	<div id="results">Your results will appear here...</div>
 	
-	<h1>WebcamJS Test Page</h1>
-	<h3>Demonstrates simple 320x240 capture &amp; display</h3>
+	<h1>MLExchage API Test</h1>
 	
 	<div id="my_camera"></div>
 	
@@ -34,7 +33,11 @@
 		Webcam.attach( '#my_camera' );
 	</script>
     <script language="JavaScript">
-        setInterval(take_snapshot, 500);
+        function start()
+        {
+            setInterval(take_snapshot, 500);
+        }
+        
         function take_snapshot() {
             
             Webcam.snap( function(data_uri) {
@@ -59,7 +62,7 @@
 	</script>
 	<!-- A button for taking snaps -->
 	<form>
-		<input type=button value="Take Snapshot" onClick="take_snapshot()">
+		<input type=button value="Start" onClick="start()">
 	</form>
 	
 	<!-- Code to handle taking the snapshot and displaying it locally -->
