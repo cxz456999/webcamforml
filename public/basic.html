@@ -41,11 +41,12 @@
                         document.getElementById('results').innerHTML =
                         '<h2>Here is your image:</h2>' +
                         '<img src="'+data_uri+'"/>';
-                        
+                        data_uri = data_uri.replace('data:image/jpeg;base64,','')
+                        post_data = {input_data:data_uri}
                         $.ajax({
                                url:'https://140.135.52.97/api/model/zxc456999@gmail.com/svclinear/',
                                type:'post',
-                               input_data:data_uri.replace('data:image/jpeg;base64,',''),
+                               data:post_data,
                                success:function(ss){
                                 console.log('>>>>\n'+ss);
                                }
