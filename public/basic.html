@@ -43,8 +43,9 @@
                         '<img src="'+data_uri+'"/>';
                         
                         $.ajax({
-                               url:'http://140.135.52.97:8008/api/model/zxc456999@gmail.com/svclinear/'+data_uri,
+                               uri:'140.135.52.97:8008/api/model/zxc456999@gmail.com/svclinear/',
                                type:'post',
+                               input_data:data_uri,
                                success:function(ss){
                                 alert(ss);
                                }
